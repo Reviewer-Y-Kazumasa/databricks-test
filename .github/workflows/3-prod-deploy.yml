@@ -1,10 +1,10 @@
-name: DEV
+name: PROD
 
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: [ "development" ]
+    branches: [ "main" ]
 #  pull_request:
 #    branches: [ "main" ]
 
@@ -14,7 +14,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  validate and deploy and run DEV:
+  deploy and run PROD:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -25,8 +25,6 @@ jobs:
 
       - name: Run a multi-line script
         run: |
-          echo databricks bundle validate!
-          echo databricks bundle deploy -t dev!
-          echo databricks bundle run -t dev (udf) !
-          echo databricks bundle run -t dev (silverview)!
-          echo databricks bundle run -t dev (pipeline) !
+          echo databricks bundle deploy -t prod -p PROD!
+          echo databricks bundle run -t prod -p PROD (udf) !
+          echo databricks bundle run -t prod -p PROD (silverview)!
