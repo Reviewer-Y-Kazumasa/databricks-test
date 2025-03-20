@@ -16,7 +16,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  deploy and run PROD:
+  deploy_and_run_PROD:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -25,8 +25,10 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
 
-      - name: Run a multi-line script
+      - name: databricks bundle deploy
+        run: echo databricks bundle deploy -t prod -p PROD!
+
+      - name: databricks bundle run
         run: |
-          echo databricks bundle deploy -t prod -p PROD!
           echo databricks bundle run -t prod -p PROD (udf) !
           echo databricks bundle run -t prod -p PROD (silverview)!
