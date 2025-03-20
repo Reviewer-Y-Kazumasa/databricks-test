@@ -33,6 +33,6 @@ jobs:
 
       - name: databricks bundle run
         run: |
-          echo databricks bundle run -t dev (udf) !
-          echo databricks bundle run -t dev (silverview)!
-          echo databricks bundle run -t dev (pipeline) !
+          echo databricks bundle run -t dev udf !
+          echo databricks bundle run -t dev silverview!
+          echo databricks bundle run -t dev pipeline !
