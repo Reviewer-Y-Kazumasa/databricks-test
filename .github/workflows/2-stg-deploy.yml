@@ -30,6 +30,6 @@ jobs:
 
       - name: databricks bundle run
         run: |
-          echo databricks bundle run -t stg -p PROD (udf) !
-          echo databricks bundle run -t stg -p PROD (silverview)!
-          echo databricks bundle run -t stg -p PROD (pipeline) !
+          echo databricks bundle run -t stg -p PROD udf !
+          echo databricks bundle run -t stg -p PROD silverview!
+          echo databricks bundle run -t stg -p PROD pipeline !
